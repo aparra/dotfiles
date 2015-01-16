@@ -15,3 +15,8 @@ function locate {
   PATTERN=`[ "$2" != "" ] && echo $2 || echo "*"`
   grep -r --include="$PATTERN" $1 .
 }
+
+#open pendrive (my macbook)
+function pendrive {
+  cd `find \Volumes\* -type d -maxdepth 0 -not -path /Volumes/MobileBackups | head -n 1`
+}
