@@ -16,7 +16,19 @@ function locate {
   grep -r --include="$PATTERN" $1 .
 }
 
+function find_pendrive_name {
+  echo `find /Volumes/* -type d -maxdepth 0 -not -path /Volumes/MobileBackups | head -n 1`
+}
+
 #open pendrive (my macbook)
 function pendrive {
-  cd `find \Volumes\* -type d -maxdepth 0 -not -path /Volumes/MobileBackups | head -n 1`
+  cd "$(find_pendrive_name)"
+}
+
+function pendrive_eject {
+  PENDRIVE=$(find_pendrive_name)
+  if [ "$PENDRIVE" ]; then
+    cd ~/
+    diskutil unmount "$PENDRIVE"
+  fi
 }
