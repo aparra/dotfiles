@@ -1,8 +1,8 @@
 " javap, v0.1
 " Runs javap to show the methods defined in the specified class
-" Usage:  javap or javap class_name
+" Usage:  Javap or Javap class_name
 
-:command -nargs=? javap call Javap(<q-args>)
+:command -nargs=? Javap call Javap(<q-args>)
 function Javap(classname)
   let save_a=@a
   let class = GetOrDefault(a:classname)
