@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/vim-stylus"]
 	path = .vim/bundle/vim-stylus
 	url = git://github.com/wavded/vim-stylus.git
+[submodule ".vim/bundle/vim-scala"]
+	path = .vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
