@@ -3,7 +3,7 @@ syntax on
 filetype plugin indent on
 
 color codeschool
-set guifont=Menlo\ Regular:h14
+set guifont=Monaco:h16
 let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
