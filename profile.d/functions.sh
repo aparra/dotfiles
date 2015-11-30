@@ -1,14 +1,15 @@
-#configure display git branch in cli
-function parse_git_branch {
+# get the name of the branch we are on
+git_prompt_info() { 
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+#  git branch | awk '/^\*/ { print $2 }'
 }
 
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
-GREEN="\[\033[0;32m\]"
-NO_COLOR="\[\033[0;0m\]"
+autoload -U colors
+colors     
+setopt prompt_subst
 
-PS1="$GREEN@ander:$NO_COLOR\w$YELLOW\$(parse_git_branch)$GREEN\$$NO_COLOR "
+PROMPT='%{$fg[green]%}%c $ %{$reset_color%}' 
+RPROMPT='%{$fg_bold[yellow]%}$(git_prompt_info)%{$reset_color%}'
 
 #search (recursive) content into files
 function locate {
@@ -31,4 +32,24 @@ function pendrive:eject {
     cd ~/
     diskutil unmount $PENDRIVE
   fi
+}
+
+function untar {
+  tar -zxvf $1
+}
+
+function docker-host {
+  grep docker /etc/hosts
+}
+
+function docker-host-update {
+  DOCKER_IP=`docker-ip`
+  DOCKER_HOST="$DOCKER_IP  docker"
+  grep -q "$DOCKER_HOST" /etc/hosts
+  if [ $? -eq 0 ]
+  then
+    echo docker-host is ok :D
+  else
+    sudo sed -i -e 's|.*docker|'"${DOCKER_HOST}"'|' /etc/hosts
+  fi  
 }
