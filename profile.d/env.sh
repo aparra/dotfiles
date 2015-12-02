@@ -7,6 +7,8 @@ export EDITOR='gvim'
 export MY_TOOLS=$HOME/development/tools
 export MY_WORKSPACE=$HOME/development/workspace
 
+cdpath=($HOME $MY_WORKSPACE)
+
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export MAVEN_HOME=$MY_TOOLS/apache-maven-3.3.3
@@ -30,11 +32,4 @@ eval "$(docker-machine env default)"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-#  FileSearch
-function f() { find . -iname "*$1*" ${@:2} }
-function r() { grep "$1" ${@:2} -R . }
-
-#mkdir and cd
-function mkcd() { mkdir -p "$@" && cd "$_"; }
 
