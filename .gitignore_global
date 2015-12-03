@@ -1,0 +1,14 @@
+*~
+*.swp
+.cache-main
+.cache-tests
+.classpath
+.settings
+.project
+bin
+project/boot
+.ivy2
+.sbt
+.scala_history
+.worksheet
+.netrwhist
