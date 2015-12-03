@@ -1,7 +1,8 @@
+#!/bin/ksh
+
 # get the name of the branch we are on
 git_prompt_info() { 
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-#  git branch | awk '/^\*/ { print $2 }'
 }
 
 autoload -U colors

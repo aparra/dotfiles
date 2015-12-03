@@ -1,3 +1,5 @@
+#!/bin/ksh
+
 alias ll='ls -lart'
 alias zshconfig='gvim ~/.zshrc'
 alias envconfig='gvim ~/env.sh'
