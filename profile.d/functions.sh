@@ -39,18 +39,3 @@ function untar {
   tar -zxvf $1
 }
 
-function docker-host {
-  grep docker /etc/hosts
-}
-
-function docker-host-update {
-  DOCKER_IP=`docker-ip`
-  DOCKER_HOST="$DOCKER_IP  docker"
-  grep -q "$DOCKER_HOST" /etc/hosts
-  if [ $? -eq 0 ]
-  then
-    echo docker-host is ok :D
-  else
-    sudo sed -i -e 's|.*docker|'"${DOCKER_HOST}"'|' /etc/hosts
-  fi  
-}
