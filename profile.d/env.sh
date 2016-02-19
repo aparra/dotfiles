@@ -29,6 +29,10 @@ eval "$(docker-machine env default)"
 . $MY_WORKSPACE/dotfiles/profile.d/functions.sh
 . $MY_WORKSPACE/dotfiles/profile.d/variables.sh
 
+if [ -f $MY_WORKSPACE/dotfiles/profile.d/private.sh ]; then
+	 . $MY_WORKSPACE/dotfiles/profile.d/private.sh
+fi
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
