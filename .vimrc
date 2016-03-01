@@ -13,3 +13,6 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp', '\.DS_Store', '\.CFUserTextEncoding']
+
+set number
+set numberwidth=1
