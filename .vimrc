@@ -16,3 +16,7 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp', '\.DS_Store', '\.CFUserTextEncodin
 
 set number
 set numberwidth=1
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
