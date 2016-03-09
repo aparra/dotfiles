@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule ".vim/bundle/pig"]
+	path = .vim/bundle/pig
+	url = https://github.com/motus/pig.vim
