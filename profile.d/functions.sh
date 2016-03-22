@@ -26,15 +26,15 @@ function locate {
 }
 
 #pendrive function for my mac
-function pendrive:find {
+function pendrive_find {
   echo `find /Volumes/* -type d -maxdepth 0 -not -path /Volumes/MobileBackups | head -n 1`
 }
 
-function pendrive:open {
+function pendrive_open {
   cd "$(pendrive:find)"
 }
 
-function pendrive:eject {
+function pendrive_eject {
   PENDRIVE="$(pendrive:find)"
   if [ $PENDRIVE ]; then
     cd ~/
