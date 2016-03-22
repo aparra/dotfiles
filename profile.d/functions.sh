@@ -12,6 +12,13 @@ setopt prompt_subst
 PROMPT='%{$fg[green]%}%c $ %{$reset_color%}' 
 RPROMPT='%{$fg_bold[yellow]%}$(git_prompt_info)%{$reset_color%}'
 
+function docker_clean_old_images {
+  #clean old images
+  docker images | grep weeks | awk '{ print $3; }' | xargs -tn1 docker rmi
+  # clean dangling layers (remove donwload images that are not more used)
+  docker images -q --filter dangling=true | xargs docker rmi
+}
+
 #search (recursive) content into files
 function locate {
   PATTERN=`[ "$2" != "" ] && echo $2 || echo "*"`
