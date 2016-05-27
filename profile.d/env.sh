@@ -22,6 +22,8 @@ export PATH=$PATH:$MY_TOOLS/prometheus-0.16.1.darwin-amd64
 
 export SBT_OPTS="-Dsbt.boot.properties=$HOME/sbt.boot.properties"
 
+export GOPATH=/usr/local/opt/go
+
 eval "$(docker-machine env default)"
 
 # configs from my dotfiles project
