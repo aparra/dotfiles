@@ -6,7 +6,7 @@ project_name = ARGV[0]
 puts "Ignoring changes for #{project_name}"
 
 eligible_pipelines = Dir.glob("*/pipeline.xml")
-pipelines = eligible_pipelines.reject {|f| f.start_with?("nielsen") }
+pipelines = eligible_pipelines.reject {|f| f.start_with?(project_name) }
 
 pipelines.each do |file_name|
   puts "* #{file_name}"
