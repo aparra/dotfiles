@@ -13,3 +13,7 @@ project/boot
 .scala_history
 .worksheet
 .netrwhist
+.idea
+project/project
+project/target
+target
