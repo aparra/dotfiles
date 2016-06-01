@@ -17,3 +17,5 @@ project/boot
 project/project
 project/target
 target
+go_pipeline_update.rb
+pipeline_ignore.rb
