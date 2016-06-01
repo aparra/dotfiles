@@ -3,6 +3,12 @@
 LAST_FILTER='<ignore pattern="*" />'
 project_name = ARGV[0]
 
+if project_name == nil
+  usage = "Usage >> pipeline_ignore.rb <project_name_to_ignore>"
+  puts usage
+  exit 1
+end
+
 puts "Ignoring changes for #{project_name}"
 
 eligible_pipelines = Dir.glob("*/pipeline.xml")
