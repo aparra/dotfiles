@@ -50,3 +50,6 @@ function untar {
   tar -zxvf $1
 }
 
+function summing {
+  awk '{ SUM += $1} END { printf "%.2f",  SUM }'
+}
