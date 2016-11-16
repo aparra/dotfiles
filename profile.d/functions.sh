@@ -53,3 +53,13 @@ function untar {
 function summing {
   awk '{ SUM += $1} END { printf "%.2f",  SUM }'
 }
+
+function upload_to_ftp {
+  FTP_NAME=$1
+  HOST=$2
+  USER=$3
+  PASSWORD=$4
+  FILE=$5
+  echo $FTP_NAME
+  sshpass -p $PASSWORD sftp -o StrictHostKeyChecking=no $USER@$HOST <<< "put $FILE"
+}
