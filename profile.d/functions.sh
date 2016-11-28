@@ -23,6 +23,12 @@ function docker_create_default_machine {
   docker-machine create --virtualbox-disk-size 60000 --driver virtualbox default # disk-size 60GB
 }
 
+function docker_mysqlzinho {
+  CONTAINER_NAME=$1
+  echo Creating a mysql container to $CONTAINER_NAME
+  docker run --name $CONTAINER_NAME -d -p 3606:3606 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+}
+
 #search (recursive) content into files
 function locate {
   PATTERN=`[ "$2" != "" ] && echo $2 || echo "*"`
