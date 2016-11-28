@@ -26,7 +26,7 @@ function docker_create_default_machine {
 function docker_mysqlzinho {
   CONTAINER_NAME=$1
   echo Creating a mysql container to $CONTAINER_NAME
-  docker run --name $CONTAINER_NAME -d -p 3606:3606 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+  docker run --name $CONTAINER_NAME -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
 }
 
 #search (recursive) content into files
