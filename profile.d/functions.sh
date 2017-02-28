@@ -19,6 +19,13 @@ function docker_clean_old_images {
   docker images -q --filter dangling=true | xargs docker rmi -f
 }
 
+function docker_remove_all_containers_and_images {
+  # delete all containers
+  docker rm $(docker ps -a -q)
+  # delete all images
+  docker rmi $(docker images -q)
+}
+
 function docker_create_default_machine {
   docker-machine create --virtualbox-disk-size 60000 --driver virtualbox default # disk-size 60GB
 }
