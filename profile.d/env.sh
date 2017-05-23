@@ -17,6 +17,9 @@ export PATH=$PATH:$MAVEN_HOME/bin
 export ANT_HOME=$MY_TOOLS/apache-ant-1.9.6
 export PATH=$PATH:$ANT_HOME/bin
 
+export PHANTOMJS_HOME=$MY_TOOLS/phantomjs-2.1.1-macosx
+export PATH=$PATH:$PHANTOMJS_HOME/bin
+
 export PATH=$PATH:$MY_TOOLS/bazooka
 export PATH=$PATH:$MY_TOOLS/prometheus-0.16.1.darwin-amd64
 
@@ -35,9 +38,7 @@ if [ -f $MY_WORKSPACE/dotfiles/profile.d/private.sh ]; then
 	 . $MY_WORKSPACE/dotfiles/profile.d/private.sh
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval "$(rbenv init -)"
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
