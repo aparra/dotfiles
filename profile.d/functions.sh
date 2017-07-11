@@ -74,5 +74,5 @@ function upload_to_ftp {
   PASSWORD=$4
   FILE=$5
   echo $FTP_NAME
-  sshpass -p $PASSWORD sftp -o StrictHostKeyChecking=no $USER@$HOST <<< "put $FILE"
+  sshpass -p $PASSWORD sftp -o StrictHostKeyChecking=no -o Compression=yes $USER@$HOST <<< "put $FILE"
 }
