@@ -20,14 +20,11 @@ export PATH=$PATH:$ANT_HOME/bin
 export PHANTOMJS_HOME=$MY_TOOLS/phantomjs-2.1.1-macosx
 export PATH=$PATH:$PHANTOMJS_HOME/bin
 
-export PATH=$PATH:$MY_TOOLS/bazooka
 export PATH=$PATH:$MY_TOOLS/prometheus-0.16.1.darwin-amd64
 
 export SBT_OPTS="-Dsbt.boot.properties=$HOME/sbt.boot.properties"
 
 export GOPATH=/usr/local/opt/go
-
-eval "$(docker-machine env default)"
 
 # configs from my dotfiles project
 . $MY_WORKSPACE/dotfiles/profile.d/alias.sh
