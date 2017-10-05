@@ -40,6 +40,7 @@ function docker_postgreszinho {
   CONTAINER_NAME=$1
   echo Creating a postgres container $CONTAINER_NAME
   docker run --name $CONTAINER_NAME -d -p 5432:5432 postgres
+  export PGHOST=localhost
 }
 
 function remove_containers {
