@@ -42,6 +42,12 @@ function docker_postgreszinho {
   docker run --name $CONTAINER_NAME -d -p 5432:5432 postgres
 }
 
+function remove_containers {
+  echo Removing all docker containers
+  docker stop $(docker ps -a -q)
+  docker rm $(docker ps -a -q)
+}
+
 #search (recursive) content into files
 function locate {
   PATTERN=`[ "$2" != "" ] && echo $2 || echo "*"`
