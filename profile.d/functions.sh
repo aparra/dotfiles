@@ -32,8 +32,14 @@ function docker_create_default_machine {
 
 function docker_mysqlzinho {
   CONTAINER_NAME=$1
-  echo Creating a mysql container to $CONTAINER_NAME
+  echo Creating a mysql container $CONTAINER_NAME
   docker run --name $CONTAINER_NAME -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+}
+
+function docker_postgreszinho {
+  CONTAINER_NAME=$1
+  echo Creating a postgres container $CONTAINER_NAME
+  docker run --name $CONTAINER_NAME -d -p 5432:5432 postgres
 }
 
 #search (recursive) content into files
