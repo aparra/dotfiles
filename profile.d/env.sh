@@ -38,3 +38,4 @@ eval "$(rbenv init -)"
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+source <(kubectl completion zsh)
