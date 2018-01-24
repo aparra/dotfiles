@@ -43,6 +43,12 @@ function docker_postgreszinho {
   export PGHOST=localhost
 }
 
+function docker_rediszinho {
+  CONTAINER_NAME=$1
+  echo Creating a redis container $CONTAINER_NAME
+  docker run --name $CONTAINER_NAME -d -p 6379:6379 redis
+}
+
 function remove_containers {
   echo Removing all docker containers
   docker stop $(docker ps -a -q)
