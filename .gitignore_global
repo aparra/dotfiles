@@ -1,6 +1,7 @@
 *~
 *.swp
 *.iml
+*.#*
 .cache-main
 .cache-tests
 .classpath
