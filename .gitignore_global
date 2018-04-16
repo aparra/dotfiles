@@ -21,3 +21,4 @@ target
 go_pipeline_update.rb
 pipeline_ignore.rb
 remote-server-prod
+.DS_Store
