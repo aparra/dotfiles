@@ -95,3 +95,9 @@ function upload_to_ftp {
   echo $FTP_NAME
   sshpass -p $PASSWORD sftp -o StrictHostKeyChecking=no -o Compression=yes $USER@$HOST <<< "put $FILE"
 }
+
+function meaning_of {
+  TERM=$1
+  grep $TERM $MY_WORKSPACE/dotfiles/resources/dictionary.txt
+}
+ 
