@@ -1,2 +1,4 @@
 ROAS: Return On Advertising Spend (ROAS) is a marketing metric that measures the efficacy of a digital advertising campaign. For every dollar that the company spends on its advertising campaign, it generates $X worth of revenue. Read more -> https://www.bigcommerce.com/ecommerce-answers/what-is-roas-calculating-return-on-ad-spend/
-
+STREAMING: a type of data processing engine that is designed with infinite data sets in mind. Read more -> https://www.oreilly.com/ideas/the-world-beyond-batch-streaming-101
+UNBOUDED DATA: infinite “streaming” data sets
+BOUDED DATA: finite “batch” data sets
