@@ -4,4 +4,5 @@ UNBOUDED DATA: infinite “streaming” data sets
 BOUDED DATA: finite “batch” data sets
 ATOMIC: an operation is atomic if it appears as if it occurred instannaeously from the point of view of other threads. The synchronized block is used to achieve atomicity in Java and Scala. It is achieved through a Monitor attached to a Thread.
 IMPRESSION: An impression is a view. When your ad loads and displays in front of a user, that is one impression. What’s the point of impressions? Well, you can’t have clicks without impressions. Users need to see your ads before they can decide whether or not to click them.
+STREAMING PERFORMANCE: A single thread can read or write data to Kafka at around 100MB/sec, which for small messages might be on the order of a million messages/sec. Read more -> https://www.oreilly.com/ideas/why-local-state-is-a-fundamental-primitive-in-stream-processing
 
