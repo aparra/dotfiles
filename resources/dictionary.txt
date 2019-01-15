@@ -2,3 +2,6 @@ ROAS: Return On Advertising Spend (ROAS) is a marketing metric that measures the
 STREAMING: a type of data processing engine that is designed with infinite data sets in mind. Read more -> https://www.oreilly.com/ideas/the-world-beyond-batch-streaming-101
 UNBOUDED DATA: infinite “streaming” data sets
 BOUDED DATA: finite “batch” data sets
+ATOMIC: an operation is atomic if it appears as if it occurred instannaeously from the point of view of other threads. The synchronized block is used to achieve atomicity in Java and Scala. It is achieved through a Monitor attached to a Thread.
+IMPRESSION: An impression is a view. When your ad loads and displays in front of a user, that is one impression. What’s the point of impressions? Well, you can’t have clicks without impressions. Users need to see your ads before they can decide whether or not to click them.
+
