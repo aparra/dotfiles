@@ -100,4 +100,10 @@ function meaning_of {
   TERM=$1
   grep $TERM $MY_WORKSPACE/dotfiles/resources/dictionary.txt
 }
- 
+
+function dynamodb_copy_data_table {
+  SOURCE_TABLE=$1
+  TARGET_TABLE=$2
+  python2.7 $MY_WORKSPACE/dotfiles/scripts/dynamodb-copy-table.py $SOURCE_TABLE $TARGET_TABLE
+}
+
