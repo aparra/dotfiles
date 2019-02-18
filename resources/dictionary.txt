@@ -8,4 +8,7 @@ STREAMING PERFORMANCE: A single thread can read or write data to Kafka at around
 AAID: Android Advertising ID
 IDFA: (Apple) ID For Advertisers
 MAID: Mobile Ad Identifiers. MOAD = MAID
+FOLD LEFT: In scala, foldLeft method is not parallelizable. To be able to change the result type from A to B in function `def foldLeft[B](z: B)(f: (B, A) => B): B` forces to have to execute foldLeft sequentially from left to right.
+FOLD: In scala, fold method is parallelizable. The function `def fold(z: A)(f: (A, A) => A): A` enables parallelize, but it restricts to always returning same type.
+AGGREGATE: In scala, aggregate method is parallelizable and enables change returning type. It is a combination of fold and foldLeft method: `def aggregate[B](z: => B)(seqOp: (B, A) => B, comOp: (B, B) => B): B`. (1) seqOp function enables sequential-style folds in chunks which change result type; (2) comOp function enables reduce of these chunks results in parallel.
 
