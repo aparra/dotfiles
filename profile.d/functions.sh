@@ -107,3 +107,11 @@ function dynamodb_copy_data_table {
   python2.7 $MY_WORKSPACE/dotfiles/scripts/dynamodb-copy-table.py $SOURCE_TABLE $TARGET_TABLE
 }
 
+function md5_hash {
+  CONTENT=$1
+  md5 <<< $CONTENT
+}
+
+function my_email_md5_hash {
+  md5_hash ander.pp@gmail.com
+}
