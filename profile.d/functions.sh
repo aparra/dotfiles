@@ -32,20 +32,23 @@ function docker_create_default_machine {
 
 function docker_mysqlzinho {
   CONTAINER_NAME=$1
-  echo Creating a mysql container $CONTAINER_NAME
-  docker run --name $CONTAINER_NAME -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+  TAG=${2:-latest}
+  echo Creating a mysql cotaniner, name: $CONTAINER_NAME version: $TAG
+  docker run --name $CONTAINER_NAME -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:$TAG
 }
 
 function docker_postgreszinho {
   CONTAINER_NAME=$1
-  echo Creating a postgres container $CONTAINER_NAME
+  TAG=${2:-latest}
+  echo Creating a postgres container, name $CONTAINER_NAME version: $TAG
   docker run --name $CONTAINER_NAME -d -p 5432:5432 postgres
   export PGHOST=localhost
 }
 
 function docker_rediszinho {
   CONTAINER_NAME=$1
-  echo Creating a redis container $CONTAINER_NAME
+  TAG=${2:-latest}
+  echo Creating a redis container, name $CONTAINER_NAME version: $TAG
   docker run --name $CONTAINER_NAME -d -p 6379:6379 redis
 }
 
