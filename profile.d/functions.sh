@@ -34,6 +34,7 @@ function docker_mysqlzinho {
   CONTAINER_NAME=$1
   TAG=${2:-latest}
   echo Creating a mysql cotaniner, name: $CONTAINER_NAME version: $TAG
+  docker pull mysql:$TAG
   docker run --name $CONTAINER_NAME -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:$TAG
 }
 
@@ -107,7 +108,7 @@ function meaning_of {
 function dynamodb_copy_data_table {
   SOURCE_TABLE=$1
   TARGET_TABLE=$2
-  python2.7 $MY_WORKSPACE/dotfiles/scripts/dynamodb-copy-table.py $SOURCE_TABLE $TARGET_TABLE
+  python3 $MY_WORKSPACE/dotfiles/scripts/dynamodb-copy-table.py $SOURCE_TABLE $TARGET_TABLE
 }
 
 function md5_hash {
