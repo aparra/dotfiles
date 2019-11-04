@@ -119,3 +119,9 @@ function md5_hash {
 function my_email_md5_hash {
   md5_hash ander.pp@gmail.com
 }
+
+function localstack_s3 {
+  S3_CMD=$1
+  aws --endpoint-url=http://localhost:4572 s3 $S3_CMD
+}
+
