@@ -125,3 +125,7 @@ function localstack_s3 {
   aws --endpoint-url=http://localhost:4572 s3 $S3_CMD
 }
 
+function how_to_k8s_port_forward {
+  echo "kubectl port-forward -n <NAME_SPACE> <POD> <SERVICE_PORT>:<TARGET_PORT>"
+}
+
