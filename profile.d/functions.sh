@@ -143,3 +143,8 @@ function k8s_set_namespace {
   export K8S_NAMESPACE=$1
 }
 
+function k8s_get_svc_ing {
+  [ -z "$K8S_NAMESPACE" ] && NS_FLAG='' || NS_FLAG="-n $K8S_NAMESPACE"
+  kubectl get svc,ing $(echo $NS_FLAG)
+}
+
