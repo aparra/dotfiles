@@ -5,12 +5,21 @@ git_prompt_info() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+k8s_namespace_info() {
+  if [ -z "$K8S_NAMESPACE" ] 
+  then
+    echo ''
+  else
+    echo "(k8s_ns: ${K8S_NAMESPACE})"
+  fi
+}
+
 autoload -U colors
 colors     
 setopt prompt_subst
 
 PROMPT='%{$fg[green]%}%c $ %{$reset_color%}' 
-RPROMPT='%{$fg_bold[yellow]%}$(git_prompt_info)%{$reset_color%}'
+RPROMPT='%{$fg_bold[red]%}$(k8s_namespace_info)%{$reset_color%} %{$fg_bold[yellow]%}$(git_prompt_info)%{$reset_color%}'
 
 function docker_clean_old_images {
   #clean old images
@@ -127,5 +136,10 @@ function localstack_s3 {
 
 function how_to_k8s_port_forward {
   echo "kubectl port-forward -n <NAME_SPACE> <POD> <SERVICE_PORT>:<TARGET_PORT>"
+}
+
+function k8s_set_namespace {
+  echo Set k8s namespace $1
+  export K8S_NAMESPACE=$1
 }
 
