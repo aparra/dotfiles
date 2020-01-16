@@ -148,3 +148,8 @@ function k8s_get_svc_ing {
   kubectl get svc,ing $(echo $NS_FLAG)
 }
 
+function k8s_get_pods {
+  [ -z "$K8S_NAMESPACE" ] && NS_FLAG='' || NS_FLAG="-n $K8S_NAMESPACE"
+  kubectl get pods $(echo $NS_FLAG)
+}
+
