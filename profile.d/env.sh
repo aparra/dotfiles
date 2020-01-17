@@ -27,6 +27,9 @@ export GOPATH=/usr/local/opt/go
 export SPARK_HOME="/usr/local/Cellar/apache-spark/2.3.0/libexec/"
 export PATH="$SPARK_HOME:$PATH"
 
+export GNU_SED_HOME="/usr/local/opt/gnu-sed/libexec/gnubin"
+export PATH="$GNU_SED_HOME:$PATH"
+
 # configs from my dotfiles project
 . $MY_WORKSPACE/dotfiles/profile.d/alias.sh
 . $MY_WORKSPACE/dotfiles/profile.d/functions.sh
