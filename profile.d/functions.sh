@@ -143,14 +143,26 @@ function k8s_set_namespace {
   export K8S_NAMESPACE=$1
 }
 
-function k8s_get_svc_ing {
+function _k8s_get_namespace {
   [ -z "$K8S_NAMESPACE" ] && NS_FLAG='' || NS_FLAG="-n $K8S_NAMESPACE"
-  kubectl get svc,ing $(echo $NS_FLAG)
+  echo $NS_FLAG
+}
+
+function k8s_get_svc_ing {
+  kubectl get svc,ing $(_k8s_get_namespace)
 }
 
 function k8s_get_pods {
-  [ -z "$K8S_NAMESPACE" ] && NS_FLAG='' || NS_FLAG="-n $K8S_NAMESPACE"
-  kubectl get pods $(echo $NS_FLAG)
+  kubectl get pods $(_k8s_get_namespace)
+}
+
+function k8s_logs {
+  POD=$1
+  kubectl logs $POD -f $(_k8s_get_namespace)
+}
+
+function k8s_desc_pods {
+  kubectl describe pods $(_k8s_get_namespace)
 }
 
 function helm_install {
