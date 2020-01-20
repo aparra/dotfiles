@@ -153,3 +153,15 @@ function k8s_get_pods {
   kubectl get pods $(echo $NS_FLAG)
 }
 
+function helm_install {
+  RELEASE=$1
+  FLAG=$2
+  helm install $RELEASE . --debug $(echo $FLAG) --namespace $K8S_NAMESPACE
+}
+
+function helm_upgrade {
+  RELEASE=$1
+  FLAG=$2
+  helm upgrade $RELEASE . --debug $(echo $FLAG) --namespace $K8S_NAMESPACE
+}
+
