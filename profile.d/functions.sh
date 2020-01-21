@@ -165,6 +165,10 @@ function k8s_desc_pods {
   kubectl describe pods $(_k8s_get_namespace)
 }
 
+function k8s_desc_svc_ing {
+  kubectl describe svc,ing $(_k8s_get_namespace)
+}
+
 function helm_install {
   RELEASE=$1
   FLAG=$2
