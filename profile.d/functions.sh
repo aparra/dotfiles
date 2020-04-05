@@ -122,7 +122,7 @@ function dynamodb_copy_data_table {
 
 function md5_hash {
   CONTENT=$1
-  md5 <<< $CONTENT
+  echo -n $CONTENT | md5
 }
 
 function my_email_md5_hash {
@@ -181,3 +181,7 @@ function helm_upgrade {
   helm upgrade $RELEASE . --debug $(echo $FLAG) --namespace $K8S_NAMESPACE
 }
 
+function decode_base64 {
+  BASE64=$1
+  echo $BASE64 | base64 - D
+}
