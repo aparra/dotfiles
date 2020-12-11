@@ -48,3 +48,6 @@ bindkey '^R' history-incremental-search-backward
 
 source <(kubectl completion zsh)
 
+export HASHI_VAUlT_HOME=$MY_TOOLS/vault_bin
+export PATH=$PATH:$HASHI_VAUlT_HOME
+
