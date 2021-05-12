@@ -185,3 +185,9 @@ function decode_base64 {
   BASE64=$1
   echo $BASE64 | base64 - D
 }
+
+function curl_headers_only {
+  URI=$1
+  curl -s $URI -D - -o /dev/null
+}
+
